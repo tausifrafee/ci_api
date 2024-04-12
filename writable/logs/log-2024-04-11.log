@@ -1,0 +1,53 @@
+ERROR - 2024-04-11 23:59:33 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp1\htdocs\ci\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp1\htdocs\ci\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'test', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp1\htdocs\ci\system\Database\BaseConnection.php(420): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp1\htdocs\ci\system\Database\BaseConnection.php(603): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp1\htdocs\ci\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp1\htdocs\ci\system\Model.php(382): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp1\htdocs\ci\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp1\htdocs\ci\system\Model.php(790): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp1\htdocs\ci\app\Controllers\Auth.php(41): CodeIgniter\Model->insert(Array)
+#8 C:\xampp1\htdocs\ci\system\CodeIgniter.php(933): App\Controllers\Auth->register()
+#9 C:\xampp1\htdocs\ci\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp1\htdocs\ci\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp1\htdocs\ci\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp1\htdocs\ci\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp1\htdocs\ci\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp1\htdocs\ci\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp1\\htdoc...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp1\htdocs\ci\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp1\htdocs\ci\system\Database\BaseConnection.php(420): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp1\htdocs\ci\system\Database\BaseConnection.php(603): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp1\htdocs\ci\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#3 C:\xampp1\htdocs\ci\system\Model.php(382): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp1\htdocs\ci\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp1\htdocs\ci\system\Model.php(790): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp1\htdocs\ci\app\Controllers\Auth.php(41): CodeIgniter\Model->insert(Array)
+#7 C:\xampp1\htdocs\ci\system\CodeIgniter.php(933): App\Controllers\Auth->register()
+#8 C:\xampp1\htdocs\ci\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp1\htdocs\ci\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp1\htdocs\ci\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp1\htdocs\ci\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp1\htdocs\ci\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp1\htdocs\ci\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp1\\htdoc...')
+#14 {main}
+CRITICAL - 2024-04-11 23:59:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: auth/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 456.
+ 1 SYSTEMPATH\Database\BaseConnection.php(603): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `user` (`name`, `email`, `password`) VALUES (:name:, :email:, :password:)', [...], false)
+ 3 SYSTEMPATH\Model.php(382): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(790): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\Auth.php(41): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->register()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp1\\htdocs\\ci\\public\\index.php')
